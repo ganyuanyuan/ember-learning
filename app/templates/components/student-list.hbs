@@ -1,0 +1,9 @@
+<h1>{{@title}}</h1>
+
+<ul>
+  {{#each @students as |student| }}
+    <li>name:{{student.name}} &nbsp;&nbsp;&nbsp;major:{{student.major}}</li>
+  {{/each}}
+</ul>
+
+{{yield}}

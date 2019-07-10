@@ -1,0 +1,40 @@
+<h1>This is a input Box with Event Binding</h1>
+<div>
+  <span>User Name: </span>
+  {{input
+    value = value
+    key-up=(action "getInputValue")
+  }}
+</div>
+
+<div>
+  <span>Password: </span>
+  <input type="password">
+</div>
+
+<button onclick={{action "signIn"}}> Login </button>
+<button onclick={{action "signOut"}}> Sign Out </button>
+{{#if this.isSignin }}
+  <div > You Loggedin as {{ inputName }} </div>
+{{/if}}
+
+<h1>This is a input Box with Two Way Data Binding</h1>
+<div>
+  <span>User Name: </span>
+  {{input
+    value=this.inputName
+  }}
+</div>
+
+<div>
+  <span>Password: </span>
+  <input type="password">
+</div>
+
+<button onclick={{action "signIn"}}> Login </button>
+<button onclick={{action "signOut"}}> Sign Out </button>
+{{#if this.isSignin }}
+  <div > You Loggedin as {{ inputName }} </div>
+{{/if}}
+
+{{yield}}
